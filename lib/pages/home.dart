@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/app_bar_custom.dart';
+import '../components/bottom_navbar_custom.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,37 +12,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppBar(),
-      // body: _body(),
-      // bottomNavigationBar: _bottomNavigation(),
+    return Scaffold(
+      appBar: const AppBarCustom(),
+      body: _body(),
+      bottomNavigationBar: const BottomNavigationCustom(),
     );
   }
 }
-  // AppBar _appBar() {
-  //   return AppBar(
-  //     title: Text('Hello World'),
-  //   );
-  // }
 
-//   Widget _body() {
-//     return const Center(
-//       child: Text('Hello World'),
-//     );
-//   }
-
-//   BottomNavigationBar _bottomNavigation() {
-//     return BottomNavigationBar(
-//       items: const [
-//         BottomNavigationBarItem(
-//           icon: Icon(Icons.home),
-//           label: 'Home',
-//         ),
-//         BottomNavigationBarItem(
-//           icon: Icon(Icons.search),
-//           label: 'Search',
-//         ),
-//       ],
-//     );
-//   }
-// }
+Widget _body() {
+  return const Center(
+    child: Text('Hello World'),
+  );
+}
