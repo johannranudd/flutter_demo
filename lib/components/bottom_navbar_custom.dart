@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 
-// Define BottomNavigationCustom as a StatefulWidget
 class BottomNavigationCustom extends StatefulWidget {
-  const BottomNavigationCustom({super.key});
+  final int selectedIndex;
+  final void Function(int index) onItemTapped;
+
+  const BottomNavigationCustom({
+    Key? key,
+    required this.selectedIndex,
+    required this.onItemTapped,
+  }) : super(key: key);
 
   @override
   State<BottomNavigationCustom> createState() => _BottomNavigationCustomState();
 }
 
 class _BottomNavigationCustomState extends State<BottomNavigationCustom> {
-  // You can add state management for the selected index here
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    print(_selectedIndex);
-  }
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -28,12 +24,16 @@ class _BottomNavigationCustomState extends State<BottomNavigationCustom> {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
+          icon: Icon(Icons.shopping_cart),
+          label: 'Products',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.info),
+          label: 'About',
         ),
       ],
-      currentIndex: _selectedIndex, // This will be used for managing state
-      onTap: _onItemTapped, // Update the state based on the item tapped
+      currentIndex: widget.selectedIndex, // Use the widget's selectedIndex
+      onTap: widget.onItemTapped, // Use the widget's onItemTapped callback
     );
   }
 }
