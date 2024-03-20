@@ -27,7 +27,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
             ),
             child: IconButton(
               onPressed: () {
-                print("navigate back");
+                debugPrint("navigate back");
               },
               icon: const Icon(Icons.chevron_left, color: Colors.white),
               tooltip: 'Back',
@@ -54,7 +54,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
               ),
               child: IconButton(
                 onPressed: () {
-                  print("filter action");
+                  debugPrint("filter action");
                 },
                 icon: const Icon(Icons.filter_list,
                     color: Colors.white), // Use filter icon

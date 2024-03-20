@@ -16,6 +16,7 @@ class _BottomNavigationCustomState extends State<BottomNavigationCustom> {
     setState(() {
       _selectedIndex = index;
     });
+    print(_selectedIndex);
   }
 
   @override
